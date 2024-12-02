@@ -5,6 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mi bolygónk Portál</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      /* List group item hover effect */
+      .list-group-item {
+        border-radius: 10px;
+        margin-bottom: 5px;
+        transition: all 0.3s ease;
+      }
+    
+      .list-group-item:hover {
+        background-color: #f7f7f7;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    
+      /* Accordion body custom styling */
+      .custom-body {
+        padding: 15px;
+        background: #f1f1f1;
+        border-left: 5px solid #28a745;
+        border-right: 5px solid #28a745;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+    
+      /* Smooth transition for the collapse */
+      .accordion-collapse {
+        transition: all 0.5s ease;
+      }
+    
+      /* Styling for the collapsed section */
+      .accordion-body code {
+        background-color: #e9ecef;
+        padding: 2px 5px;
+        border-radius: 3px;
+      }
+    
+      
+    
+      /* Hover effect on the accordion body */
+      .accordion-body:hover {
+        background-color: #f8f9fa;
+      }
+
+      /* Fade out effect for <small> tag */
+      .fading-text {
+        background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-background-clip: text;  /* Applies the gradient to the text itself */
+        color: transparent;  /* Makes the text itself transparent */
+        transition: background 0.5s ease;  /* Smooth transition for the background */
+      }
+
+      /* On hover, the text fades out from left to right */
+      .list-group-item[aria-expanded="true"] .fading-text {
+        background: transparent;
+      }
+
+      
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg  bg-success">
@@ -27,17 +85,17 @@
                   Hírek
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Globális</a></li>
-                  <li><a class="dropdown-item" href="#">Helyi</a></li>
-                  <li><a class="dropdown-item" href="#">Mind</a></li>
+                  <li><a class="dropdown-item" href="hir.html" onclick="global()">Globális</a></li>
+                  <li><a class="dropdown-item" href="hir.html" onclick="helyi()">Helyi</a></li>
+                  <li><a class="dropdown-item" href="hir.html" onclick="mind()">Mind</a></li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Rólunk</a>
+                <a class="nav-link text-white" href="rolunk.html">Rólunk</a>
               </li>  
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control me-2" type="search" placeholder="Keresés" aria-label="Search">
               <button class="btn btn-outline-white border-white text-white" type="submit">Keresés</button>
             </form>
           </div>
@@ -49,34 +107,37 @@
         <div class="row mt-5">
             <div class="col-4">
                 <h1 class="h1. Bootstrap heading text-success">Rólunk</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima totam aperiam, neque voluptates praesentium qui eaque rerum ea suscipit molestiae quas facilis quaerat reiciendis atque cupiditate consequuntur sequi porro corrupti minus ipsum et quasi, illum veniam. Nesciunt neque quos tempora. Consequatur veritatis praesentium consectetur nulla repudiandae illo aliquam! Ut, enim!</p>
+                <p>Célunk a Föld védelme, és elkötelezetten dolgozunk a környezet megóvásáért, valamint a fenntartható jövő megteremtéséért. Csapatunk tagjai között szakemberek, aktivisták és önkéntesek találhatók, akik mindannyian hisznek abban, hogy közösen képesek vagyunk változást elérni. Küldetésünk, hogy minél több embert inspiráljunk, és segítsünk a környezeti problémák megoldásában.</p>
                 
                 <div class="row text-end fs-5 mt-1">
                     <div class="col">
-                        <u class="text-secondary"><a href="#" class="text-decoration-none"><p class="text-secondary"><em>Tovább olvasom ...</em></p></a></u>
+                        <u class="text-secondary"><a href="rolunk.html" class="text-decoration-none"><p class="text-secondary"><em>Tovább olvasom ...</em></p></a></u>
                     </div>
                 </div>
                 
             </div>
             <div class="col-8">
-                <div id="carouselExampleIndicators" class="carousel slide">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="slider1.png" class="d-block w-100" alt="">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="slider1.png" class="d-block w-100" alt="">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="slider1.png" class="d-block w-100" alt="">
-                      </div>
-                    </div>
+              <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="slider1.png" class="d-block w-100" alt="...">
                   </div>
+                  <div class="carousel-item">
+                    <img src="slider1.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="slider1.png" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
         </div>
 
@@ -173,7 +234,7 @@
             </div>
             <div class="row text-end fs-5 mt-1">
                 <div class="col">
-                    <u class="text-secondary"><a href="#" class="text-decoration-none"><p class="text-secondary"><em>További események ...</em></p></a></u>
+                    <u class="text-secondary"><a href="esemeny.html" class="text-decoration-none"><p class="text-secondary"><em>További események ...</em></p></a></u>
                 </div>
             </div>
 
@@ -184,75 +245,156 @@
                 <h1 class="h1. Bootstrap heading text-success"><a href="akciok.html" class="text-decoration-none"></a>Akciók a Földért</h1>
             </div>
             <div class="row">
-                <div class="col">
-                    <div class="card" style="max-width: 22rem;">
-                        <img src="slider1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Esemény</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <div class="row">
-                            <div class="col">
-                                <a href="#" class="btn btn-primary">Megnézem</a>
-                            </div>
-                            
-                          </div>
+              <div class="col-3 mt-3">
+                <div class="card h-100" style="max-width: 22rem;">
+                    <img src="kepek/akcio/akcio1.png" class="card-img-top" alt="akcio1">
+                    <div class="card-body">
+                      <h5 class="card-title">Táska, ami soha nem megy ki a divatból</h5>
+                      <p class="card-text">Cseréld le az egyszer használatos műanyag zacskókat egy stílusos, többször használható táskára!</p>
+                      <div class="row mt-5">
+                        <div class="col position-absolute bottom-0 end-0 mb-3">
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#m1">Megnézem</a>
                         </div>
+                        
+                      </div>
                     </div>
                 </div>
-    
-                <div class="col">
-                    <div class="card" style="max-width: 22rem;">
-                        <img src="slider1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Esemény</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <div class="row">
-                            <div class="col">
-                                <a href="#" class="btn btn-primary">Megnézem</a>
-                            </div>
-                            
-                          </div>
-                        </div>
-                    </div>
+              </div>
+            
+  
+            <div class="modal" tabindex="-1" id="m1">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-3">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Táska, ami soha nem megy ki a divatból</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p id="i1" style="text-align: justify;">Cseréld le az egyszer használatos műanyag zacskókat egy stílusos, többször használható táskára! A bolygónk minden egyes műanyag zacskót megérdemel, hogy eltűnjön. Válassz tartós alternatívákat, és ne hagyd, hogy egyetlen szemetesként végezze el a táskádban!</p>
+                    <img src="kepek/akcio/akcio1.png" class="w-100">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Bezár</button>
+                  </div>
                 </div>
-    
-                <div class="col">
-                    <div class="card" style="max-width: 22rem;">
-                        <img src="slider1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Esemény</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <div class="row">
-                            <div class="col">
-                                <a href="#" class="btn btn-primary">Megnézem</a>
-                            </div>
-                            
-                          </div>
-                        </div>
+              </div>
+            </div>
+          
+  
+  
+          
+            <div class="col-3 mt-3">
+              <div class="card h-100" style="max-width: 22rem;">
+                  <img src="kepek/akcio/akcio2.png" class="card-img-top" alt="akcio2">
+                  <div class="card-body">
+                    <h5 class="card-title">Komposztálj, és adózz a földnek</h5>
+                    <p class="card-text">Adj vissza a természetnek mindent, amit tőle kaptál!</p>
+                    <div class="row mt-5">
+                      <div class="col position-absolute bottom-0 end-0 mb-3">
+                          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#m2">Megnézem</a>
+                      </div>
+                      
                     </div>
+                  </div>
+              </div>
+            </div>
+  
+            <div class="modal" tabindex="-1" id="m2">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-3">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Komposztálj, és adózz a földnek</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p id="i2" style="text-align: justify;">Adj vissza a természetnek mindent, amit tőle kaptál! A komposztálás nemcsak csökkenti a hulladékat, hanem gazdagítja a talajt, segít helyreállítani az egyensúlyt, és új életet ad a szerves anyagoknak. Kezdj el komposztálni még ma!</p>
+                    <img src="kepek/akcio/akcio2.png" class="w-100">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Bezár</button>
+                  </div>
                 </div>
+              </div>
+            </div>
+  
+            
+            <div class="col-3 mt-3">
+              <div class="card h-100" style="max-width: 22rem;">
+                  <img src="kepek/akcio/akcio3.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Villanykörte, ami többet ér</h5>
+                    <p class="card-text">Válts LED-re, és spórolj pénzt a villanyszámlán!</p>
+                    <div class="row mt-5">
+                      <div class="col position-absolute bottom-0 end-0 mb-3">
+                          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#m3">Megnézem</a>
+                      </div>
+                      
+                    </div>
+                  </div>
+              </div>
+            </div>
+  
+            <div class="modal" tabindex="-1" id="m3">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-3">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Villanykörte, ami többet ér</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p id="i3" style="text-align: justify;">Válts LED-re, és spórolj pénzt a villanyszámlán! Egy kis váltás, amitől nemcsak a pénztárcád, hanem a Föld is hálás lesz. Az energiatakarékos izzók hosszú távon kevesebb áramot fogyasztanak, és kevesebb káros anyagot bocsátanak ki.</p>
+                    <img src="kepek/akcio/akcio3.png" class="w-100">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Bezár</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="col-3 mt-3">
+              <div class="card h-100" style="max-width: 22rem;">
+                  <img src="kepek/akcio/akcio4.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Hagyd a kocsit, pattanj biciklire!</h5>
+                    <p class="card-text">Az autóval a dugóban ülni? Inkább pörögj egyet a kétkerekűn!</p>
+                    <div class="row mt-5">
+                      <div class="col position-absolute bottom-0 end-0 mb-3">
+                          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#m4">Megnézem</a>
+                      </div>
+                      
+                    </div>
+                  </div>
+              </div>
+            </div>
+  
+            <div class="modal" tabindex="-1" id="m4">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content p-3">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Hagyd a kocsit, pattanj biciklire!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p id="i4" style="text-align: justify;">Az autóval a dugóban ülni? Inkább pörögj egyet a kétkerekűn! A bicikli nemcsak a környezetet óvja, hanem a közlekedési káoszban is segít navigálni. Gyors, egészséges, és a legjobb módja annak, hogy zöldebbé tedd a mindennapjaidat.</p>
+                    <img src="kepek/akcio/akcio4.png" class="w-100">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Bezár</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            
+            
+            <div class="row text-end fs-5 mt-1">
                 <div class="col">
-                    <div class="card" style="max-width: 22rem;">
-                        <img src="slider1.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Esemény</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <div class="row">
-                            <div class="col">
-                                <a href="#" class="btn btn-primary">Megnézem</a>
-                            </div>
-                            
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row text-end fs-5 mt-1">
-                    <div class="col">
-                        <u class="text-secondary"><a href="akcio.html" class="text-decoration-none"><p class="text-secondary"><em>Összes akció megtekintése ...</em></p></a></u>
-                    </div>
+                    <u class="text-secondary"><a href="akcio.html" class="text-decoration-none"><p class="text-secondary"><em>Összes akció megtekintése ...</em></p></a></u>
                 </div>
             </div>
+          </div>
         </div>
 
         <div class="row mt-5">
@@ -260,48 +402,134 @@
                 <h1 class="h1. Bootstrap heading text-success">Hírek</h1>
             </div>
             <div class="row">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Hír1</h5>
-                        <small>3 days ago</small>
-                      </div>
-                      <p class="mb-1">Some placeholder content in a paragraph.</p>
-                      <small>And some small print.</small>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Hír2</h5>
-                        <small class="text-body-secondary">3 days ago</small>
-                      </div>
-                      <p class="mb-1">Some placeholder content in a paragraph.</p>
-                      <small class="text-body-secondary">And some muted small print.</small>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Hír3</h5>
-                        <small class="text-body-secondary">3 days ago</small>
-                      </div>
-                      <p class="mb-1">Some placeholder content in a paragraph.</p>
-                      <small class="text-body-secondary">And some muted small print.</small>
-                    </a>
+              <div class="list-group" id="accordionExample">
+                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Új EU-s szabályozás a műanyaghulladék csökkentésére</h5>
+                    <small>2 órája</small>
                   </div>
+                  <p class="mb-1">Szankciók és célok a műanyaghulladék minimalizálására</p>
+                  <small class="fading-text">Az Európai Unió új rendeletek bevezetését jelentette be, melyek célja a műanyaghulladék 50%-os csökkentése 2030-ra.</small>
+                </a>
+                <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body custom-body p-5">
+                    <img src="kepek/hir/hir1.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                    <strong>Az Európai Unió új rendeletek bevezetését jelentette be, melyek célja a műanyaghulladék 50%-os csökkentése 2030-ra.</strong> Az új szabályozás szigorúbb előírásokat tartalmaz a műanyagcsomagolások használatára vonatkozóan, és minden tagállamnak kötelessége lesz megfelelni a céloknak. A jövőben jelentős büntetésekkel kell szembenézniük azoknak a vállalatoknak, amelyek nem csökkentik megfelelően termékeik műanyagtartalmát.
+                    <br><br>A változások részeként a műanyag palackok újrahasznosítását is előtérbe helyezik. Az új intézkedések szerint az egyes tagállamoknak 2025-re legalább 30%-kal kell növelniük a műanyaghulladék visszagyűjtését. A szabályozás hatása hosszú távon nemcsak a környezetre, hanem a gazdaságra is komoly hatással lesz, mivel új munkahelyeket teremthet az újrahasznosítási iparágakban.
+                    <br><br>Ezeket a célokat az EU már a következő hónapokban elkezdi nyomon követni, és évente értékelni fogják, hogy a tagállamok mennyire teljesítik az előírásokat. A környezetvédők üdvözölték a kezdeményezést, de figyelmeztetnek, hogy csak szoros ellenőrzés mellett lehet biztosítani a hatékonyságot.
+                    <br><br>A jövőben minden fogyasztónak és vállalkozásnak szerepet kell vállalnia a műanyagmentes jövő megteremtésében, mivel egyes becslések szerint évente több mint 8 millió tonna műanyag kerül a világóceánokba. Az új szabályozás kulcsfontosságú lépés ezen probléma kezelésében.
+                    
+                  </div>
+                </div>
+                
+                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Globális erdőirtás csökkenése 2023-ban</h5>
+                    <small>6 órája</small>
+                  </div>
+                  <p class="mb-1">Előrelépés az erdők védelmében, de az ütem lassú</p>
+                  <small class="fading-text">A legfrissebb ENSZ-jelentés szerint 2023-ban az erdőirtás globális üteme 15%-kal csökkent a tavalyi évhez képest.</small>
+                </a>
+                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body custom-body p-5">
+                    <img src="kepek/hir/hir2.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                    <strong>A legfrissebb ENSZ-jelentés szerint 2023-ban az erdőirtás globális üteme 15%-kal csökkent a tavalyi évhez képest.</strong> Az adatokat különféle országok erdővédelmi programjai alapján gyűjtötték össze. Az erdők védelme az éghajlatváltozás elleni küzdelem egyik kulcsfontosságú eleme, és a csökkenő erdőirtás új reményt adhat a globális környezetvédelmi törekvéseknek.
+                    <br><br>Bár a tendencia biztató, az ütem lassúnak mondható, és sok regionális kormányzatnak még komolyabb erőfeszítéseket kell tennie az erdőirtás teljes megszüntetéséért. Az erdők védelme mellett az illegális fakitermelés elleni küzdelem is egyre fontosabbá válik.
+                    <br><br>A fenntartható erdőgazdálkodás és az ökológiai helyreállítási programok támogatása révén számos ország sikeresen csökkentette az erdőirtás mértékét, de a probléma még mindig globális szintű kihívást jelent. Az erdők megóvása érdekében elengedhetetlen a kormányzati intézkedések és a magánszektor közötti szoros együttműködés.
+                    <br><br>Az erdők megvédése nemcsak az éghajlatváltozás szempontjából fontos, hanem az ökoszisztémák megóvása és a helyi közösségek számára biztosított fenntartható jövedelem szempontjából is alapvető.
+                  </div>
+                </div>
+              
+                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Világszerte emelkedő tengerparti áradások fenyegetése</h5>
+                    <small>1 napja</small>
+                  </div>
+                  <p class="mb-1">Egyre több várost érintenek a tengerparti áradások</p>
+                  <small class="fading-text">A klímaváltozás hatásaként a tengerparti áradások világszerte egyre gyakoribbá és erősebbé válnak,</small>
+                </a>
+                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body custom-body p-5">
+                    <img src="kepek/hir/hir3.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                    <strong>A klímaváltozás hatásaként a tengerparti áradások világszerte egyre gyakoribbá és erősebbé válnak,</strong> és számos város, különösen a tengerpartokon fekvő nagyvárosok, egyre inkább veszélybe kerülnek. Az utóbbi években rekordmagasságba emelkedtek a tengervíz szintjei, ami az áradások intenzitását és terjedelmét növeli.
+                    <br><br>Az Egyesült Államok, Délkelet-Ázsia és a Karib-térség tengerparti területei különösen érintettek. A kutatók előrejelzései szerint a következő évtizedekben a part menti területek több millió ember számára válhatnak lakhatatlanná. A tengerparti városok, mint Miami, Jakarta és Velence, már most is komoly erőfeszítéseket tesznek a védőgátak építésére és az infrastruktúra megerősítésére.
+                    <br><br>A kutatások szerint a jövőben a legnagyobb veszélyt a szuperviharok és a rendkívüli áramlások jelenti, amelyek szélsőséges csapadékot és dagályt hoznak, gyorsan elárasztva a part menti területeket. A tengerparti áradások ellen teendő lépések közé tartozik a fenntartható várostervezés, a zöld infrastruktúra alkalmazása, valamint a partvédelmi programok erősítése.
+                    <br><br>A világ tengerparti közösségeinek fel kell készülniük a jövőbeli áradásokra, és mindent el kell követniük, hogy csökkentsék a globális felmelegedés mértékét, amely az áradások számát és súlyosságát is növeli.
+                  </div>
+                </div>
+
+                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Új eszközök segítenek a védett állatfajok nyomon követésében</h5>
+                    <small>1 napja</small>
+                  </div>
+                  <p class="mb-1">Modern technológia a védett fajok védelmében</p>
+                  <small class="fading-text">A tudósok új technológiai eszközöket fejlesztettek ki, amelyek lehetővé teszik a védett állatfajok hatékonyabb nyomon követését és védelmét.</small>
+                </a>
+                <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body custom-body p-5">
+                    <img src="kepek/hir/hir4.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                    <strong>A tudósok új technológiai eszközöket fejlesztettek ki, amelyek lehetővé teszik a védett állatfajok hatékonyabb nyomon követését és védelmét.</strong> Az új módszerek, mint például a GPS-követők és az intelligens kamerák, segítenek a szakértőknek a veszélyeztetett fajok vándorlásának, táplálkozási szokásaiknak és élőhelyük állapotának figyelemmel kísérésében.
+                    <br><br>A tudósok az új eszközöket már tesztelik több olyan állatfaj esetében, mint a tigrisek, orrszarvúak és egyes madárfajok, amelyek különösen veszélyeztetettek. Az új technológia segít abban, hogy a védett fajokat jobban megértsük, és hatékonyabban tudjunk közbeavatkozni, amikor a populációk csökkenését tapasztaljuk.
+                    <br><br>A fejlesztett eszközök nemcsak a fajok védelme szempontjából fontosak, hanem az élőhelyek fenntartásához is elengedhetetlenek. A nyomon követési rendszerek segítségével a kutatók gyorsabban reagálhatnak a környezeti változásokra, mint például az erdőirtás vagy a klímaváltozás hatásai.
+                    <br><br>A technológia továbbfejlesztésével és a nemzetközi együttműködések erősítésével a jövőben még nagyobb lépéseket tehetünk a védett állatok megóvása érdekében.
+                  </div>
+                </div>
+              </div>
             </div>
         
 
             <div class="row text-end fs-5 mt-1">
                 <div class="col">
-                    <u class="text-secondary"><a href="#" class="text-decoration-none"><p class="text-secondary"><em>Tovább a hírportálra ...</em></p></a></u>
+                    <u class="text-secondary"><a href="hirek.html" onclick="mind()" class="text-decoration-none"><p class="text-secondary"><em>Tovább a hírportálra ...</em></p></a></u>
                 </div>
             </div>
         </div>
       </div>
       
       
-      <footer class="container-fluid bg-success mt-5" style="height: 300px;">
+      <footer class="container-fluid bg-success mt-5" style="min-height: 300px;">
         <div class="container">
+          <div class="row">
+          <div class="col-4">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </div>
+          
+          <div class="col-4">Kapcsolat
+Környezetvédelmi Csapatunk
+Weboldal: www.foldvedelme.hu
+Email: info@foldvedelme.hu
+Telefon: +36 1 234 5678
+Cím: 1234 Budapest, Zöld Út 10.
 
+Kövess minket
+[Facebook ikon] [Instagram ikon] [Twitter ikon] [LinkedIn ikon]
+            </div>
+            <div class="col-4">
+Támogasd a munkánkat!
+Amennyiben szeretnél hozzájárulni a Föld védelméhez, támogathatod munkánkat adományokkal. Részletek itt: [Adományozás link]
+
+Szolgáltatásaink
+
+Fenntartható fejlesztési tanácsadás
+Környezetvédelmi workshopok és oktatás
+Zöld projektek szervezése
+Hulladékcsökkentési tanácsadás
+Felhasználási feltételek
+Adatvédelmi irányelvek
+
+Copyright © 2024 Föld Védelme Csapat
+Minden jog fenntartva.
+          </div>
         </div>
+      </div>
 
       </footer>
       
