@@ -5,64 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mi bolygónk Portál</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-      /* List group item hover effect */
-      .list-group-item {
-        border-radius: 10px;
-        margin-bottom: 5px;
-        transition: all 0.3s ease;
-      }
-    
-      .list-group-item:hover {
-        background-color: #f7f7f7;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-    
-      /* Accordion body custom styling */
-      .custom-body {
-        padding: 15px;
-        background: #f1f1f1;
-        border-left: 5px solid #28a745;
-        border-right: 5px solid #28a745;
-        margin-bottom: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-      }
-    
-      /* Smooth transition for the collapse */
-      .accordion-collapse {
-        transition: all 0.5s ease;
-      }
-    
-      /* Styling for the collapsed section */
-      .accordion-body code {
-        background-color: #e9ecef;
-        padding: 2px 5px;
-        border-radius: 3px;
-      }
-    
-      
-    
-      /* Hover effect on the accordion body */
-      .accordion-body:hover {
-        background-color: #f8f9fa;
-      }
-
-      /* Fade out effect for <small> tag */
-      .fading-text {
-        background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-        -webkit-background-clip: text;  /* Applies the gradient to the text itself */
-        color: transparent;  /* Makes the text itself transparent */
-        transition: background 0.5s ease;  /* Smooth transition for the background */
-      }
-
-      /* On hover, the text fades out from left to right */
-      .list-group-item[aria-expanded="true"] .fading-text {
-        background: transparent;
-      }
-
-      
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg  bg-success">
@@ -85,9 +28,9 @@
                   Hírek
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="hir.html" onclick="global()">Globális</a></li>
-                  <li><a class="dropdown-item" href="hir.html" onclick="helyi()">Helyi</a></li>
-                  <li><a class="dropdown-item" href="hir.html" onclick="mind()">Mind</a></li>
+                  <li><a class="dropdown-item" href="hir.html?show=globalis">Globális</a></li>
+                  <li><a class="dropdown-item" href="hir.html?show=helyi">Helyi</a></li>
+                  <li><a class="dropdown-item" href="hir.html?show=mind" onclick="mind()">Mind</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -119,199 +62,216 @@
           <div class="row">
             <div class="">
               <div class="list-group" id="accordionExample">
-                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Új EU-s szabályozás a műanyaghulladék csökkentésére</h5>
-                    <small>2 órája</small>
+                <article  class="global">
+                  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Új EU-s szabályozás a műanyaghulladék csökkentésére</h5>
+                      <small>2 órája</small>
+                    </div>
+                    <p class="mb-1">Szankciók és célok a műanyaghulladék minimalizálására</p>
+                    <small class="fading-text">Az Európai Unió új rendeletek bevezetését jelentette be, melyek célja a műanyaghulladék 50%-os csökkentése 2030-ra.</small>
+                  </a>
+                  <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-body p-5">
+                      <img src="kepek/hir/hir1.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                      <strong>Az Európai Unió új rendeletek bevezetését jelentette be, melyek célja a műanyaghulladék 50%-os csökkentése 2030-ra.</strong> Az új szabályozás szigorúbb előírásokat tartalmaz a műanyagcsomagolások használatára vonatkozóan, és minden tagállamnak kötelessége lesz megfelelni a céloknak. A jövőben jelentős büntetésekkel kell szembenézniük azoknak a vállalatoknak, amelyek nem csökkentik megfelelően termékeik műanyagtartalmát.
+                      <br><br>A változások részeként a műanyag palackok újrahasznosítását is előtérbe helyezik. Az új intézkedések szerint az egyes tagállamoknak 2025-re legalább 30%-kal kell növelniük a műanyaghulladék visszagyűjtését. A szabályozás hatása hosszú távon nemcsak a környezetre, hanem a gazdaságra is komoly hatással lesz, mivel új munkahelyeket teremthet az újrahasznosítási iparágakban.
+                      <br><br>Ezeket a célokat az EU már a következő hónapokban elkezdi nyomon követni, és évente értékelni fogják, hogy a tagállamok mennyire teljesítik az előírásokat. A környezetvédők üdvözölték a kezdeményezést, de figyelmeztetnek, hogy csak szoros ellenőrzés mellett lehet biztosítani a hatékonyságot.
+                      <br><br>A jövőben minden fogyasztónak és vállalkozásnak szerepet kell vállalnia a műanyagmentes jövő megteremtésében, mivel egyes becslések szerint évente több mint 8 millió tonna műanyag kerül a világóceánokba. Az új szabályozás kulcsfontosságú lépés ezen probléma kezelésében.
+                      
+                    </div>
                   </div>
-                  <p class="mb-1">Szankciók és célok a műanyaghulladék minimalizálására</p>
-                  <small class="fading-text">Az Európai Unió új rendeletek bevezetését jelentette be, melyek célja a műanyaghulladék 50%-os csökkentése 2030-ra.</small>
-                </a>
-                <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body custom-body p-5">
-                    <img src="kepek/hir/hir1.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
-                    <strong>Az Európai Unió új rendeletek bevezetését jelentette be, melyek célja a műanyaghulladék 50%-os csökkentése 2030-ra.</strong> Az új szabályozás szigorúbb előírásokat tartalmaz a műanyagcsomagolások használatára vonatkozóan, és minden tagállamnak kötelessége lesz megfelelni a céloknak. A jövőben jelentős büntetésekkel kell szembenézniük azoknak a vállalatoknak, amelyek nem csökkentik megfelelően termékeik műanyagtartalmát.
-                    <br><br>A változások részeként a műanyag palackok újrahasznosítását is előtérbe helyezik. Az új intézkedések szerint az egyes tagállamoknak 2025-re legalább 30%-kal kell növelniük a műanyaghulladék visszagyűjtését. A szabályozás hatása hosszú távon nemcsak a környezetre, hanem a gazdaságra is komoly hatással lesz, mivel új munkahelyeket teremthet az újrahasznosítási iparágakban.
-                    <br><br>Ezeket a célokat az EU már a következő hónapokban elkezdi nyomon követni, és évente értékelni fogják, hogy a tagállamok mennyire teljesítik az előírásokat. A környezetvédők üdvözölték a kezdeményezést, de figyelmeztetnek, hogy csak szoros ellenőrzés mellett lehet biztosítani a hatékonyságot.
-                    <br><br>A jövőben minden fogyasztónak és vállalkozásnak szerepet kell vállalnia a műanyagmentes jövő megteremtésében, mivel egyes becslések szerint évente több mint 8 millió tonna műanyag kerül a világóceánokba. Az új szabályozás kulcsfontosságú lépés ezen probléma kezelésében.
-                    
-                  </div>
-                </div>
+                </article>
                 
-                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Globális erdőirtás csökkenése 2023-ban</h5>
-                    <small>6 órája</small>
+
+                <article  class="global">
+                  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Globális erdőirtás csökkenése 2023-ban</h5>
+                      <small>6 órája</small>
+                    </div>
+                    <p class="mb-1">Előrelépés az erdők védelmében, de az ütem lassú</p>
+                    <small class="fading-text">A legfrissebb ENSZ-jelentés szerint 2023-ban az erdőirtás globális üteme 15%-kal csökkent a tavalyi évhez képest.</small>
+                  </a>
+                  <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-body p-5">
+                      <img src="kepek/hir/hir2.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                      <strong>A legfrissebb ENSZ-jelentés szerint 2023-ban az erdőirtás globális üteme 15%-kal csökkent a tavalyi évhez képest.</strong> Az adatokat különféle országok erdővédelmi programjai alapján gyűjtötték össze. Az erdők védelme az éghajlatváltozás elleni küzdelem egyik kulcsfontosságú eleme, és a csökkenő erdőirtás új reményt adhat a globális környezetvédelmi törekvéseknek.
+                      <br><br>Bár a tendencia biztató, az ütem lassúnak mondható, és sok regionális kormányzatnak még komolyabb erőfeszítéseket kell tennie az erdőirtás teljes megszüntetéséért. Az erdők védelme mellett az illegális fakitermelés elleni küzdelem is egyre fontosabbá válik.
+                      <br><br>A fenntartható erdőgazdálkodás és az ökológiai helyreállítási programok támogatása révén számos ország sikeresen csökkentette az erdőirtás mértékét, de a probléma még mindig globális szintű kihívást jelent. Az erdők megóvása érdekében elengedhetetlen a kormányzati intézkedések és a magánszektor közötti szoros együttműködés.
+                      <br><br>Az erdők megvédése nemcsak az éghajlatváltozás szempontjából fontos, hanem az ökoszisztémák megóvása és a helyi közösségek számára biztosított fenntartható jövedelem szempontjából is alapvető.
+                    </div>
                   </div>
-                  <p class="mb-1">Előrelépés az erdők védelmében, de az ütem lassú</p>
-                  <small class="fading-text">A legfrissebb ENSZ-jelentés szerint 2023-ban az erdőirtás globális üteme 15%-kal csökkent a tavalyi évhez képest.</small>
-                </a>
-                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body custom-body p-5">
-                    <img src="kepek/hir/hir2.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
-                    <strong>A legfrissebb ENSZ-jelentés szerint 2023-ban az erdőirtás globális üteme 15%-kal csökkent a tavalyi évhez képest.</strong> Az adatokat különféle országok erdővédelmi programjai alapján gyűjtötték össze. Az erdők védelme az éghajlatváltozás elleni küzdelem egyik kulcsfontosságú eleme, és a csökkenő erdőirtás új reményt adhat a globális környezetvédelmi törekvéseknek.
-                    <br><br>Bár a tendencia biztató, az ütem lassúnak mondható, és sok regionális kormányzatnak még komolyabb erőfeszítéseket kell tennie az erdőirtás teljes megszüntetéséért. Az erdők védelme mellett az illegális fakitermelés elleni küzdelem is egyre fontosabbá válik.
-                    <br><br>A fenntartható erdőgazdálkodás és az ökológiai helyreállítási programok támogatása révén számos ország sikeresen csökkentette az erdőirtás mértékét, de a probléma még mindig globális szintű kihívást jelent. Az erdők megóvása érdekében elengedhetetlen a kormányzati intézkedések és a magánszektor közötti szoros együttműködés.
-                    <br><br>Az erdők megvédése nemcsak az éghajlatváltozás szempontjából fontos, hanem az ökoszisztémák megóvása és a helyi közösségek számára biztosított fenntartható jövedelem szempontjából is alapvető.
-                  </div>
-                </div>
+                </article>
               
-                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Világszerte emelkedő tengerparti áradások fenyegetése</h5>
-                    <small>1 napja</small>
+                <article  class="global">
+                  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Világszerte emelkedő tengerparti áradások fenyegetése</h5>
+                      <small>1 napja</small>
+                    </div>
+                    <p class="mb-1">Egyre több várost érintenek a tengerparti áradások</p>
+                    <small class="fading-text">A klímaváltozás hatásaként a tengerparti áradások világszerte egyre gyakoribbá és erősebbé válnak,</small>
+                  </a>
+                  <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-body p-5">
+                      <img src="kepek/hir/hir3.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                      <strong>A klímaváltozás hatásaként a tengerparti áradások világszerte egyre gyakoribbá és erősebbé válnak,</strong> és számos város, különösen a tengerpartokon fekvő nagyvárosok, egyre inkább veszélybe kerülnek. Az utóbbi években rekordmagasságba emelkedtek a tengervíz szintjei, ami az áradások intenzitását és terjedelmét növeli.
+                      <br><br>Az Egyesült Államok, Délkelet-Ázsia és a Karib-térség tengerparti területei különösen érintettek. A kutatók előrejelzései szerint a következő évtizedekben a part menti területek több millió ember számára válhatnak lakhatatlanná. A tengerparti városok, mint Miami, Jakarta és Velence, már most is komoly erőfeszítéseket tesznek a védőgátak építésére és az infrastruktúra megerősítésére.
+                      <br><br>A kutatások szerint a jövőben a legnagyobb veszélyt a szuperviharok és a rendkívüli áramlások jelenti, amelyek szélsőséges csapadékot és dagályt hoznak, gyorsan elárasztva a part menti területeket. A tengerparti áradások ellen teendő lépések közé tartozik a fenntartható várostervezés, a zöld infrastruktúra alkalmazása, valamint a partvédelmi programok erősítése.
+                      <br><br>A világ tengerparti közösségeinek fel kell készülniük a jövőbeli áradásokra, és mindent el kell követniük, hogy csökkentsék a globális felmelegedés mértékét, amely az áradások számát és súlyosságát is növeli.
+                    </div>
                   </div>
-                  <p class="mb-1">Egyre több várost érintenek a tengerparti áradások</p>
-                  <small class="fading-text">A klímaváltozás hatásaként a tengerparti áradások világszerte egyre gyakoribbá és erősebbé válnak,</small>
-                </a>
-                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body custom-body p-5">
-                    <img src="kepek/hir/hir3.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
-                    <strong>A klímaváltozás hatásaként a tengerparti áradások világszerte egyre gyakoribbá és erősebbé válnak,</strong> és számos város, különösen a tengerpartokon fekvő nagyvárosok, egyre inkább veszélybe kerülnek. Az utóbbi években rekordmagasságba emelkedtek a tengervíz szintjei, ami az áradások intenzitását és terjedelmét növeli.
-                    <br><br>Az Egyesült Államok, Délkelet-Ázsia és a Karib-térség tengerparti területei különösen érintettek. A kutatók előrejelzései szerint a következő évtizedekben a part menti területek több millió ember számára válhatnak lakhatatlanná. A tengerparti városok, mint Miami, Jakarta és Velence, már most is komoly erőfeszítéseket tesznek a védőgátak építésére és az infrastruktúra megerősítésére.
-                    <br><br>A kutatások szerint a jövőben a legnagyobb veszélyt a szuperviharok és a rendkívüli áramlások jelenti, amelyek szélsőséges csapadékot és dagályt hoznak, gyorsan elárasztva a part menti területeket. A tengerparti áradások ellen teendő lépések közé tartozik a fenntartható várostervezés, a zöld infrastruktúra alkalmazása, valamint a partvédelmi programok erősítése.
-                    <br><br>A világ tengerparti közösségeinek fel kell készülniük a jövőbeli áradásokra, és mindent el kell követniük, hogy csökkentsék a globális felmelegedés mértékét, amely az áradások számát és súlyosságát is növeli.
+                </article>
+
+                <article  class="global">
+                  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Új eszközök segítenek a védett állatfajok nyomon követésében</h5>
+                      <small>1 napja</small>
+                    </div>
+                    <p class="mb-1">Modern technológia a védett fajok védelmében</p>
+                    <small class="fading-text">A tudósok új technológiai eszközöket fejlesztettek ki, amelyek lehetővé teszik a védett állatfajok hatékonyabb nyomon követését és védelmét.</small>
+                  </a>
+                  <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-body p-5">
+                      <img src="kepek/hir/hir4.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                      <strong>A tudósok új technológiai eszközöket fejlesztettek ki, amelyek lehetővé teszik a védett állatfajok hatékonyabb nyomon követését és védelmét.</strong> Az új módszerek, mint például a GPS-követők és az intelligens kamerák, segítenek a szakértőknek a veszélyeztetett fajok vándorlásának, táplálkozási szokásaiknak és élőhelyük állapotának figyelemmel kísérésében.
+                      <br><br>A tudósok az új eszközöket már tesztelik több olyan állatfaj esetében, mint a tigrisek, orrszarvúak és egyes madárfajok, amelyek különösen veszélyeztetettek. Az új technológia segít abban, hogy a védett fajokat jobban megértsük, és hatékonyabban tudjunk közbeavatkozni, amikor a populációk csökkenését tapasztaljuk.
+                      <br><br>A fejlesztett eszközök nemcsak a fajok védelme szempontjából fontosak, hanem az élőhelyek fenntartásához is elengedhetetlenek. A nyomon követési rendszerek segítségével a kutatók gyorsabban reagálhatnak a környezeti változásokra, mint például az erdőirtás vagy a klímaváltozás hatásai.
+                      <br><br>A technológia továbbfejlesztésével és a nemzetközi együttműködések erősítésével a jövőben még nagyobb lépéseket tehetünk a védett állatok megóvása érdekében.
+                    </div>
                   </div>
-                </div>
+                </article> 
 
-                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Új eszközök segítenek a védett állatfajok nyomon követésében</h5>
-                    <small>1 napja</small>
+
+                <article  class="global">
+                  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Az Európai Unió betiltja a káros vegyi anyagokat a mezőgazdaságban</h5>
+                      <small>2 napja</small>
+                    </div>
+                    <p class="mb-1">Új jogszabályok a környezetbarát mezőgazdaság érdekében</p>
+                    <small class="fading-text">Az Európai Unió új jogszabályokat vezetett be, amelyek célja a legveszélyesebb vegyi anyagok fokozatos betiltása a mezőgazdaságban.</small>
+                  </a>
+                  <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-body p-5">
+                      <img src="kepek/hir/hir5.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                      <strong>Az Európai Unió új jogszabályokat vezetett be, amelyek célja a legveszélyesebb vegyi anyagok fokozatos betiltása a mezőgazdaságban.</strong> A rendelet különösen a peszticidek és növényvédő szerek használatát szabályozza, amelyeket a tudósok a talaj és vízszennyezés egyik fő forrásának tartanak. Az EU célja, hogy 2030-ra csökkentse a mezőgazdasági vegyszerek használatát legalább 50%-kal.
+                      <br><br>A szabályozás részét képezik a fenntartható alternatívák népszerűsítése, mint a biológiai növényvédelmi módszerek, és a szerves trágyák alkalmazásának elősegítése. A rendeletet az agráripar és a környezetvédelmi csoportok egyaránt üdvözölték, bár sok gazdálkodó aggódik a költségek és a terméshozamok csökkenése miatt.
+                      <br><br>A jogszabályokat az EU tagállamai 2024 végéig kötelesek átültetni saját jogrendszerükbe. A célzott támogatások és képzési programok segítenek a gazdáknak alkalmazkodni az új előírásokhoz, miközben biztosítják, hogy az uniós mezőgazdaság továbbra is versenyképes maradjon.
+                      <br><br>A szabályozás hosszú távon segíthet abban, hogy csökkentsük a toxikus anyagok talajba és vízbe jutását, és megóvjuk a biodiverzitást, miközben fenntarthatóbb mezőgazdasági gyakorlatokat alakítunk ki.
+                    </div>
                   </div>
-                  <p class="mb-1">Modern technológia a védett fajok védelmében</p>
-                  <small class="fading-text">A tudósok új technológiai eszközöket fejlesztettek ki, amelyek lehetővé teszik a védett állatfajok hatékonyabb nyomon követését és védelmét.</small>
-                </a>
-                <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body custom-body p-5">
-                    <img src="kepek/hir/hir4.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
-                    <strong>A tudósok új technológiai eszközöket fejlesztettek ki, amelyek lehetővé teszik a védett állatfajok hatékonyabb nyomon követését és védelmét.</strong> Az új módszerek, mint például a GPS-követők és az intelligens kamerák, segítenek a szakértőknek a veszélyeztetett fajok vándorlásának, táplálkozási szokásaiknak és élőhelyük állapotának figyelemmel kísérésében.
-                    <br><br>A tudósok az új eszközöket már tesztelik több olyan állatfaj esetében, mint a tigrisek, orrszarvúak és egyes madárfajok, amelyek különösen veszélyeztetettek. Az új technológia segít abban, hogy a védett fajokat jobban megértsük, és hatékonyabban tudjunk közbeavatkozni, amikor a populációk csökkenését tapasztaljuk.
-                    <br><br>A fejlesztett eszközök nemcsak a fajok védelme szempontjából fontosak, hanem az élőhelyek fenntartásához is elengedhetetlenek. A nyomon követési rendszerek segítségével a kutatók gyorsabban reagálhatnak a környezeti változásokra, mint például az erdőirtás vagy a klímaváltozás hatásai.
-                    <br><br>A technológia továbbfejlesztésével és a nemzetközi együttműködések erősítésével a jövőben még nagyobb lépéseket tehetünk a védett állatok megóvása érdekében.
+                </article>
+
+
+                <article  class="global">
+                  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Japánban új védett tengeri rezervátumot hoztak létre</h5>
+                      <small>4 napja</small>
+                    </div>
+                    <p class="mb-1">25 ezer négyzetkilométeres tengeri terület védelme</p>
+                    <small class="fading-text">Japán kormánya bejelentette, hogy létrehoz egy új tengeri rezervátumot a Csendes-óceánon, amely mintegy 25 ezer négyzetkilométert foglal el.</small>
+                  </a>
+                  <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-body p-5">
+                      <img src="kepek/hir/hir6.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                      <strong>Japán kormánya bejelentette, hogy létrehoz egy új tengeri rezervátumot a Csendes-óceánon, amely mintegy 25 ezer négyzetkilométert foglal el.</strong> Az új védett terület célja a tengeri élővilág, különösen a veszélyeztetett fajok, mint a teknősök és a cetfélék védelme. A döntést a világ vezető tengerbiológusai üdvözölték, mivel az új rezervátum létrehozása jelentős lépést jelent a globális tengeri ökoszisztémák védelmében.
+                      <br><br>A területet szigorú szabályozás alá helyezik, ahol tilos lesz a halászat, az ipari tevékenységek és a káros környezeti hatású fejlesztések. A kormány azt is bejelentette, hogy az új területet folyamatosan monitorozni fogják, hogy biztosítsák a védett fajok és élőhelyek védelmét.
+                      <br><br>A projekt részeként az ottani halászközösségek alternatív jövedelemforrásokhoz juthatnak, miközben Japán a világ legnagyobb tengeri rezervátumát hozza létre, ami a globális tengeri környezetvédelem számára példaértékű.
+                      <br><br>A tudósok arra figyelmeztetnek, hogy bár az új rezervátum fontos lépés, a tengeri élőhelyek védelme érdekében globális összefogás szükséges a fenntartható halászat és a környezetbarát tengeri gazdálkodás érdekében.
+                    </div>
                   </div>
-                </div>
+                </article>
 
 
-                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Az Európai Unió betiltja a káros vegyi anyagokat a mezőgazdaságban</h5>
-                    <small>2 napja</small>
+
+                <article  class="local">
+                  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7" id="collapse7_">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Zöld tetők: Budapest vezető szerepet vállal a városi zöldítésben</h5>
+                      <small>5 napja</small>
+                    </div>
+                    <p class="mb-1">Zöld tetők segítik a levegőminőség javítását a fővárosban</p>
+                    <small class="fading-text">Budapestre új városi zöld tetők építése terjedt el, amelyek célja a levegőminőség javítása és a város hőmérsékletének csökkentése.</small>
+                  </a>
+                  <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-body p-5">
+                      <img src="kepek/hir/hir7.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                      <strong>Budapestre új városi zöld tetők építése terjedt el, amelyek célja a levegőminőség javítása és a város hőmérsékletének csökkentése.</strong> Az új épületek tetejére ültetett növények nemcsak szépítik a városképet, hanem jelentős szerepet játszanak a szén-dioxid megkötésében is, ezzel segítve a globális felmelegedés elleni küzdelmet.
+                      <br><br>A városvezetés szerint ezek a zöld tetők nemcsak a levegő tisztításában segítenek, hanem a csapadékvíz elvezetésében is fontos szerepet játszanak, csökkentve ezzel az esőzések utáni vízfelhalmozódást. A program célja, hogy 2030-ig a budapesti épületek legalább 10%-a zöldtetős legyen.
+                      <br><br>A zöld tetők egyre népszerűbbek a helyi lakosok körében, mivel csökkenthetik az épületek hűtési költségeit, és javíthatják az életminőséget a zöld felületek révén. Az önkormányzat támogatást nyújt azoknak, akik szeretnék ilyen módon zöldíteni otthonaikat.
+                      <br><br>A főváros ezen kezdeményezése példaként szolgálhat más európai városok számára is, amelyek szintén a fenntartható városfejlesztés irányába szeretnének elmozdulni.
+                    </div>
                   </div>
-                  <p class="mb-1">Új jogszabályok a környezetbarát mezőgazdaság érdekében</p>
-                  <small class="fading-text">Az Európai Unió új jogszabályokat vezetett be, amelyek célja a legveszélyesebb vegyi anyagok fokozatos betiltása a mezőgazdaságban.</small>
-                </a>
-                <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body custom-body p-5">
-                    <img src="kepek/hir/hir5.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
-                    <strong>Az Európai Unió új jogszabályokat vezetett be, amelyek célja a legveszélyesebb vegyi anyagok fokozatos betiltása a mezőgazdaságban.</strong> A rendelet különösen a peszticidek és növényvédő szerek használatát szabályozza, amelyeket a tudósok a talaj és vízszennyezés egyik fő forrásának tartanak. Az EU célja, hogy 2030-ra csökkentse a mezőgazdasági vegyszerek használatát legalább 50%-kal.
-                    <br><br>A szabályozás részét képezik a fenntartható alternatívák népszerűsítése, mint a biológiai növényvédelmi módszerek, és a szerves trágyák alkalmazásának elősegítése. A rendeletet az agráripar és a környezetvédelmi csoportok egyaránt üdvözölték, bár sok gazdálkodó aggódik a költségek és a terméshozamok csökkenése miatt.
-                    <br><br>A jogszabályokat az EU tagállamai 2024 végéig kötelesek átültetni saját jogrendszerükbe. A célzott támogatások és képzési programok segítenek a gazdáknak alkalmazkodni az új előírásokhoz, miközben biztosítják, hogy az uniós mezőgazdaság továbbra is versenyképes maradjon.
-                    <br><br>A szabályozás hosszú távon segíthet abban, hogy csökkentsük a toxikus anyagok talajba és vízbe jutását, és megóvjuk a biodiverzitást, miközben fenntarthatóbb mezőgazdasági gyakorlatokat alakítunk ki.
+                </article>
+
+
+                <article  class="global">
+                  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Törökországban új törvény a fák védelmében</h5>
+                      <small>2 hete</small>
+                    </div>
+                    <p class="mb-1">A török kormány megerősíti az erdővédelmi szabályokat</p>
+                    <small class="fading-text">Törökország kormánya bevezetett egy új törvényt, amely szigorúbb szabályokat ír elő az erdőirtás és a fák kivágása ellen.</small>
+                  </a>
+                  <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-body p-5">
+                      <img src="kepek/hir/hir8.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                      <strong>Törökország kormánya bevezetett egy új törvényt, amely szigorúbb szabályokat ír elő az erdőirtás és a fák kivágása ellen.</strong> A törvény értelmében minden egyes fa kivágása előtt engedélyezési eljárásra van szükség, és szigorú büntetések várnak azokra, akik illegálisan irtanak fákat az ország területén.
+                      <br><br>A kormány célja a gyorsan csökkenő erdőállomány védelme, különösen az ország mediterrán és anatóliai régióiban, ahol a fakitermelés és a városiasodás gyors ütemben zajlik. A törvény előírja a faültetési programok indítását is, amelyek során évente több millió fát ültetnek a veszélyeztetett területeken.
+                      <br><br>A szabályozás szigorításával együtt a török kormány számos környezetvédelmi oktatási és tájékoztató kampányt indít a lakosság körében, hogy tudatosítsák bennük az erdők megóvásának fontosságát.
+                      <br><br>A nemzetközi közösség üdvözölte a lépést, mivel Törökországnak az egyik legnagyobb erdőterülettel rendelkező országok közé kell tartoznia, és a változtatások kulcsfontosságúak a globális biodiverzitás fenntartásában.
+                    </div>
                   </div>
-                </div>
+                </article>
 
 
-                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Japánban új védett tengeri rezervátumot hoztak létre</h5>
-                    <small>4 napja</small>
+
+                <article  class="global">
+                  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Szén-dioxid-kibocsátás csökkentése a légiközlekedésben</h5>
+                      <small>3 hete</small>
+                    </div>
+                    <p class="mb-1">Az új, fenntartható üzemanyagok forradalmasíthatják a repülést</p>
+                    <small class="fading-text">A légiközlekedési szektor új technológiai fejlesztéseket indított, amelyek célja a szén-dioxid-kibocsátás jelentős csökkentése.</small>
+                  </a>
+                  <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-body p-5">
+                      <img src="kepek/hir/hir9.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                      <strong>A légiközlekedési szektor új technológiai fejlesztéseket indított, amelyek célja a szén-dioxid-kibocsátás jelentős csökkentése.</strong> A nemzetközi repülőtársaságok és kutatóintézetek közösen dolgoznak a fenntartható üzemanyagok (SAF) kifejlesztésén, amelyek csökkenthetik a repülés környezeti hatásait.
+                      <br><br>A legújabb kutatások alapján ezek az üzemanyagok akár 80%-kal is csökkenthetik a légiközlekedés szén-dioxid-kibocsátását. A technológia már az első próbaflughajtásokat is megkezdte, és a szakértők előrejelzései szerint 2030-ra a légitársaságok 50%-ban áttérhetnek a fenntartható üzemanyagokra.
+                      <br><br>Bár az új üzemanyagok fejlesztése magas költségekkel jár, a szektor és a kormányok közötti együttműködés segíthet gyorsítani az áttérést. Az iparági szakértők szerint a jövőben nemcsak a környezetvédelem, hanem a gazdaság is profitálhat a fenntartható üzemanyagok elterjedéséből.
+                      <br><br>A fenntartható légiközlekedés kulcsfontosságú lépés a globális klímavédelmi célok elérésében, és a jövőben nagy szerepet kaphat a repülés karbonsemlegesítésében.
+                    </div>
                   </div>
-                  <p class="mb-1">25 ezer négyzetkilométeres tengeri terület védelme</p>
-                  <small class="fading-text">Japán kormánya bejelentette, hogy létrehoz egy új tengeri rezervátumot a Csendes-óceánon, amely mintegy 25 ezer négyzetkilométert foglal el.</small>
-                </a>
-                <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body custom-body p-5">
-                    <img src="kepek/hir/hir6.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
-                    <strong>Japán kormánya bejelentette, hogy létrehoz egy új tengeri rezervátumot a Csendes-óceánon, amely mintegy 25 ezer négyzetkilométert foglal el.</strong> Az új védett terület célja a tengeri élővilág, különösen a veszélyeztetett fajok, mint a teknősök és a cetfélék védelme. A döntést a világ vezető tengerbiológusai üdvözölték, mivel az új rezervátum létrehozása jelentős lépést jelent a globális tengeri ökoszisztémák védelmében.
-                    <br><br>A területet szigorú szabályozás alá helyezik, ahol tilos lesz a halászat, az ipari tevékenységek és a káros környezeti hatású fejlesztések. A kormány azt is bejelentette, hogy az új területet folyamatosan monitorozni fogják, hogy biztosítsák a védett fajok és élőhelyek védelmét.
-                    <br><br>A projekt részeként az ottani halászközösségek alternatív jövedelemforrásokhoz juthatnak, miközben Japán a világ legnagyobb tengeri rezervátumát hozza létre, ami a globális tengeri környezetvédelem számára példaértékű.
-                    <br><br>A tudósok arra figyelmeztetnek, hogy bár az új rezervátum fontos lépés, a tengeri élőhelyek védelme érdekében globális összefogás szükséges a fenntartható halászat és a környezetbarát tengeri gazdálkodás érdekében.
+                </article>
+
+
+
+                <article  class="global">
+                  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Afrikai országok közösen védik a gorillák élőhelyeit</h5>
+                      <small>1 hónapja</small>
+                    </div>
+                    <p class="mb-1">Új védelmi megállapodás a gorillák számára</p>
+                    <small class="fading-text">Több afrikai ország közös megállapodást kötött a gorillák élőhelyének védelme érdekében.</small>
+                  </a>
+                  <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-body p-5">
+                      <img src="kepek/hir/hir10.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
+                      <strong>Több afrikai ország közös megállapodást kötött a gorillák élőhelyének védelme érdekében.</strong> Az új kezdeményezés célja, hogy megállítsa a gorillák élőhelyének pusztulását, amely az illegális erdőirtás és vadászat következményeként egyre nagyobb fenyegetést jelent ezen veszélyeztetett faj számára.
+                      <br><br>A projekt részeként számos nemzeti park és védett terület jön létre, ahol szigorúan ellenőrzik az emberi tevékenységet, és a helyi közösségeket is bevonják a fajok védelmébe. A gorillák élőhelyének megóvása mellett a projekt segít a fenntartható turizmus fejlesztésében, amely biztosíthatja a helyi közösségek számára a védett területek környezetbarát hasznosítását.
+                      <br><br>A szakértők szerint a kezdeményezés kulcsfontosságú lehet a gorillák megmentésében, és példát adhat más veszélyeztetett fajok védelmére is. Az afrikai országok közötti együttműködés lehetőséget biztosít a fajok hosszú távú túlélésére.
+                      <br><br>A projektet több nemzetközi természetvédelmi szervezet is támogatja, és az eredmények várhatóan globális figyelmet kapnak.
+                    </div>
                   </div>
-                </div>
-
-
-
-
-                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Zöld tetők: Budapest vezető szerepet vállal a városi zöldítésben</h5>
-                    <small>5 napja</small>
-                  </div>
-                  <p class="mb-1">Zöld tetők segítik a levegőminőség javítását a fővárosban</p>
-                  <small class="fading-text">Budapestre új városi zöld tetők építése terjedt el, amelyek célja a levegőminőség javítása és a város hőmérsékletének csökkentése.</small>
-                </a>
-                <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body custom-body p-5">
-                    <img src="kepek/hir/hir7.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
-                    <strong>Budapestre új városi zöld tetők építése terjedt el, amelyek célja a levegőminőség javítása és a város hőmérsékletének csökkentése.</strong> Az új épületek tetejére ültetett növények nemcsak szépítik a városképet, hanem jelentős szerepet játszanak a szén-dioxid megkötésében is, ezzel segítve a globális felmelegedés elleni küzdelmet.
-                    <br><br>A városvezetés szerint ezek a zöld tetők nemcsak a levegő tisztításában segítenek, hanem a csapadékvíz elvezetésében is fontos szerepet játszanak, csökkentve ezzel az esőzések utáni vízfelhalmozódást. A program célja, hogy 2030-ig a budapesti épületek legalább 10%-a zöldtetős legyen.
-                    <br><br>A zöld tetők egyre népszerűbbek a helyi lakosok körében, mivel csökkenthetik az épületek hűtési költségeit, és javíthatják az életminőséget a zöld felületek révén. Az önkormányzat támogatást nyújt azoknak, akik szeretnék ilyen módon zöldíteni otthonaikat.
-                    <br><br>A főváros ezen kezdeményezése példaként szolgálhat más európai városok számára is, amelyek szintén a fenntartható városfejlesztés irányába szeretnének elmozdulni.
-                  </div>
-                </div>
-
-
-                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Törökországban új törvény a fák védelmében</h5>
-                    <small>2 hete</small>
-                  </div>
-                  <p class="mb-1">A török kormány megerősíti az erdővédelmi szabályokat</p>
-                  <small class="fading-text">Törökország kormánya bevezetett egy új törvényt, amely szigorúbb szabályokat ír elő az erdőirtás és a fák kivágása ellen.</small>
-                </a>
-                <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body custom-body p-5">
-                    <img src="kepek/hir/hir8.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
-                    <strong>Törökország kormánya bevezetett egy új törvényt, amely szigorúbb szabályokat ír elő az erdőirtás és a fák kivágása ellen.</strong> A törvény értelmében minden egyes fa kivágása előtt engedélyezési eljárásra van szükség, és szigorú büntetések várnak azokra, akik illegálisan irtanak fákat az ország területén.
-                    <br><br>A kormány célja a gyorsan csökkenő erdőállomány védelme, különösen az ország mediterrán és anatóliai régióiban, ahol a fakitermelés és a városiasodás gyors ütemben zajlik. A törvény előírja a faültetési programok indítását is, amelyek során évente több millió fát ültetnek a veszélyeztetett területeken.
-                    <br><br>A szabályozás szigorításával együtt a török kormány számos környezetvédelmi oktatási és tájékoztató kampányt indít a lakosság körében, hogy tudatosítsák bennük az erdők megóvásának fontosságát.
-                    <br><br>A nemzetközi közösség üdvözölte a lépést, mivel Törökországnak az egyik legnagyobb erdőterülettel rendelkező országok közé kell tartoznia, és a változtatások kulcsfontosságúak a globális biodiverzitás fenntartásában.
-                  </div>
-                </div>
-
-
-
-                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Szén-dioxid-kibocsátás csökkentése a légiközlekedésben</h5>
-                    <small>3 hete</small>
-                  </div>
-                  <p class="mb-1">Az új, fenntartható üzemanyagok forradalmasíthatják a repülést</p>
-                  <small class="fading-text">A légiközlekedési szektor új technológiai fejlesztéseket indított, amelyek célja a szén-dioxid-kibocsátás jelentős csökkentése.</small>
-                </a>
-                <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body custom-body p-5">
-                    <img src="kepek/hir/hir9.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
-                    <strong>A légiközlekedési szektor új technológiai fejlesztéseket indított, amelyek célja a szén-dioxid-kibocsátás jelentős csökkentése.</strong> A nemzetközi repülőtársaságok és kutatóintézetek közösen dolgoznak a fenntartható üzemanyagok (SAF) kifejlesztésén, amelyek csökkenthetik a repülés környezeti hatásait.
-                    <br><br>A legújabb kutatások alapján ezek az üzemanyagok akár 80%-kal is csökkenthetik a légiközlekedés szén-dioxid-kibocsátását. A technológia már az első próbaflughajtásokat is megkezdte, és a szakértők előrejelzései szerint 2030-ra a légitársaságok 50%-ban áttérhetnek a fenntartható üzemanyagokra.
-                    <br><br>Bár az új üzemanyagok fejlesztése magas költségekkel jár, a szektor és a kormányok közötti együttműködés segíthet gyorsítani az áttérést. Az iparági szakértők szerint a jövőben nemcsak a környezetvédelem, hanem a gazdaság is profitálhat a fenntartható üzemanyagok elterjedéséből.
-                    <br><br>A fenntartható légiközlekedés kulcsfontosságú lépés a globális klímavédelmi célok elérésében, és a jövőben nagy szerepet kaphat a repülés karbonsemlegesítésében.
-                  </div>
-                </div>
-
-
-
-                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Afrikai országok közösen védik a gorillák élőhelyeit</h5>
-                    <small>1 hónapja</small>
-                  </div>
-                  <p class="mb-1">Új védelmi megállapodás a gorillák számára</p>
-                  <small class="fading-text">Több afrikai ország közös megállapodást kötött a gorillák élőhelyének védelme érdekében.</small>
-                </a>
-                <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body custom-body p-5">
-                    <img src="kepek/hir/hir10.png" style="float: right; margin-left: 20px;" class="rounded col-4 img-fluid mb-3">
-                    <strong>Több afrikai ország közös megállapodást kötött a gorillák élőhelyének védelme érdekében.</strong> Az új kezdeményezés célja, hogy megállítsa a gorillák élőhelyének pusztulását, amely az illegális erdőirtás és vadászat következményeként egyre nagyobb fenyegetést jelent ezen veszélyeztetett faj számára.
-                    <br><br>A projekt részeként számos nemzeti park és védett terület jön létre, ahol szigorúan ellenőrzik az emberi tevékenységet, és a helyi közösségeket is bevonják a fajok védelmébe. A gorillák élőhelyének megóvása mellett a projekt segít a fenntartható turizmus fejlesztésében, amely biztosíthatja a helyi közösségek számára a védett területek környezetbarát hasznosítását.
-                    <br><br>A szakértők szerint a kezdeményezés kulcsfontosságú lehet a gorillák megmentésében, és példát adhat más veszélyeztetett fajok védelmére is. Az afrikai országok közötti együttműködés lehetőséget biztosít a fajok hosszú távú túlélésére.
-                    <br><br>A projektet több nemzetközi természetvédelmi szervezet is támogatja, és az eredmények várhatóan globális figyelmet kapnak.
-                  </div>
-                </div>
-
-
-
+                </article>
 
               </div>
               </div>
@@ -319,16 +279,7 @@
             </div>
           </div>
             
-
-          
-        
-
-
-
-
         </div>
-
-
 
       </div>
         
@@ -388,7 +339,8 @@
       </footer>
       
 
-    
+    <script src="hirek.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
   </body>
 </html>
