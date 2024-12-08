@@ -27,7 +27,7 @@ Helyszín: Berlin, Németország
 Esemény leírása: A Zöld Energia Expo kiállítás és konferencia, amely az alternatív energiaforrásokat, mint például a nap- és szélenergiát népszerűsíti. A legújabb technológiai újításokat mutatják be, valamint esettanulmányokkal ismertetik a megújuló energiák alkalmazásának előnyeit és kihívásait.
 Tudnivalók: A rendezvény szakmai közönség számára is hasznos, a látogatók betekintést nyerhetnek a legújabb zöld technológiákba.
 
----------------------
+
 Klímaaktivista Felvonulás
 Helyszín: London, Egyesült Királyság
 Esemény leírása: A klímaaktivisták szerveztek egy felvonulást, amely célja, hogy felhívja a figyelmet a globális felmelegedés ellen tett intézkedések sürgetésére. A résztvevők plakátokkal és transzparensekkel demonstrálnak, miközben számos ismert aktivista tart előadást a klímaváltozás hatásairól.
@@ -62,7 +62,7 @@ Tudnivalók: A rendezvény regisztrációhoz kötött, és díjazásban részes�
 Helyszín: Tokió, Japán
 Esemény leírása: A kiállítás célja, hogy a látogatók számára interaktív módon bemutassa a klímaváltozás hatásait és a lehetséges megoldásokat. A különböző tematikus zónákban, mint például a vízgazdálkodás, fenntartható mezőgazdaság, és megújuló energia, a látogatók megismerhetik a legújabb tudományos eredményeket és kezdeményezéseket.
 Tudnivalók: A kiállítás a családok számára is érdekes, a szervezők külön gyerekprogramokat is kínálnak.
-
+---------------------
 
 Tudományos Klímakonferencia
 Helyszín: Stockholm, Svédország
